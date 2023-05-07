@@ -13,5 +13,7 @@ for _ in range(P):
             if heights[j] < heights[j-1]:
                 heights[j], heights[j-1] = heights[j-1], heights[j]
                 cnt += 1
+            else:
+                break              
 
     print(T, cnt)
