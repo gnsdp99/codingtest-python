@@ -14,5 +14,4 @@ for i in range(N):
         if info[i][0] < info[j][0] and info[i][1] < info[j][1]:
             res[i] += 1
             
-for i in range(N):
-    print(res[i], end=' ')
+print(*res)
