@@ -4,8 +4,7 @@ input = sys.stdin.readline
 passwd = input().rstrip()
 vowels = ['a', 'e', 'i', 'o', 'u']
 
-while passwd != 'end':
-    def check_acceptable(passwd):
+def check_acceptable(passwd):
         stack = list(passwd)
         c_cnt, v_cnt = 0, 0 # constant / vowel counter
         last_ch = '' # a char popped from stack
@@ -27,5 +26,6 @@ while passwd != 'end':
         # check if there is not any vowel in password
         return True if v_flag == 1 else False
     
+while passwd != 'end':
     print(f"<{passwd}> is acceptable." if check_acceptable(passwd) else f"<{passwd}> is not acceptable.")
     passwd = input().rstrip()
