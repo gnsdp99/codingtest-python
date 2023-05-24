@@ -19,3 +19,30 @@ def find_max_visitor():
     
 num, cnt = find_max_visitor()
 print("SAD") if num == 0 else print(f"{num}\n{cnt}")
+
+# 피어 리뷰
+import sys
+from collections import deque
+input = sys.stdin.readline
+n, x = map(int, input().split())
+visitor = list(map(int, input().split())) # 리스트에 방문자수를 모두 저장하고 나중에 max와 count를 찾음.
+def blog():
+    cumul_sum, day = sum(visitor[:x]), 0
+    visit = []
+    for i, many in enumerate(visitor, start=1):
+        if i >= x:
+            visit.append(cumul_sum)
+            if i == n:
+                break
+            cumul_sum -= visitor[day]
+            day += 1
+            cumul_sum += visitor[i]
+    max_visit = max(visit)
+    if max_visit == 0:
+        print("SAD")
+        return 
+    print(max_visit)
+    print(visit.count(max_visit))
+    return 
+
+blog()
