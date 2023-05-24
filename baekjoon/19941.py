@@ -15,3 +15,19 @@ for i in range(len(PH)):
             break
 
 print(ans)
+
+# 피어 리뷰
+# 기준을 사람으로 잡아서 그 사람 기준 왼쪽부터 오른쪽까지 탐색함.
+import sys
+input = sys.stdin.readline
+n, k = map(int, input().split())
+burger = list(input().rstrip())
+result = 0
+for i, ham in enumerate(burger):
+    if ham == 'P':
+        for j in range(max(i-k, 0), min(n, i+k+1)):
+            if burger[j] == 'H':
+                burger[j] = 'E'
+                result += 1
+                break
+print(result)
