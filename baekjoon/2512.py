@@ -24,3 +24,5 @@ def find_maxBudget():
     return max_budget
 
 print(find_maxBudget())
+
+# 이분 탐색으로 풀이 해보기
