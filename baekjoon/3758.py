@@ -30,8 +30,8 @@ def find_rank():
     sorted_records = sorted(records.items(), key=lambda x:(-x[1]['score'], x[1]['numSubmit'], x[1]['lastSubmit']))
     # 기록 중 등수만 추출
     ranks = list(zip(*sorted_records))[0]
-
-    # # 나의 팀 순위를 반환
+    
+    # 나의 팀 순위를 반환
     myRank = ranks.index(t) + 1 # 인덱스가 0부터 시작
     return myRank
                 
