@@ -29,8 +29,8 @@ def find_rank():
     # 기록을 총 점수 높은 순 -> 제출 횟수 적은 순 -> 마지막 제출 시간 뻐른 순으로 정렬
     sorted_records = sorted(records.items(), key=lambda x:(-x[1]['score'], x[1]['numSubmit'], x[1]['lastSubmit']))
     # 기록 중 등수만 추출
-    ranks = list(zip(*sorted_records))[0]
-    
+    ranks = list(zip(*sorted_records))[0] # ## 리뷰하면서 zip과 unpacking에 대해 확실히 깨달음.
+
     # 나의 팀 순위를 반환
     myRank = ranks.index(t) + 1 # 인덱스가 0부터 시작
     return myRank
